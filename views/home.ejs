@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var max_fields = 2;
+  var x= 1;
+  var add_category = $(".sub-category");
+  var adding_btn = $(".add-category");
+  $(adding_btn).click(function(){
+    if(x< max_fields){
+      $(add_category).prepend('<div class="form-group"><select  name="" id="inputState" class="form-control dform"> <option selected>Select Sub Category</option><option>...</option> </select> </div>')
+  $("select").attr("name" , "Subcategory" + x  );
+        x++;
+    }
+  });
+});
+</script>
+
+</head>
+
+<body style="padding:10% 15% 10%; background-image: linear-gradient(#66bfbf, white);">
+  <div class="container" style="background-color:#cf7500; border-radius:15px;  padding: 5% 25% 10%;">
+    <h2 style="text-align:center;">Registration Form</h2><br>
+    <div class="row">
+      <div class="col-lg-12">
+        <form action="/" method="post">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="name" name="firstname" class="form-control" id="inputEmail4" required placeholder="First name">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="name" name="lastname" class="form-control" id="inputPassword4" required placeholder="Last name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="email"name="email" class="form-control" id="inputEmail4" required placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="mobile" name="mobileno" class="form-control" id="inputPassword4" required placeholder="Mobile no.">
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" name="Caddress" class="form-control" id="inputAddress" required placeholder="Address">
+          </div>
+          <div class="form-group">
+            <select name="Cname" required id="inputState" class="form-control">
+              <option selected>Comapany name</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <select name="Sname1" required id="inputState" class="form-control">
+              <option selected>Select Category</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="sub-category">
+            <div required class="form-group">
+              <select id="inputState" class="form-control">
+                <option selected>Select Sub Category</option>
+                <option>...</option>
+              </select>
+            </div>
+                    <h5> <button type="button" class="add-category"style="background-color:#cf7500; border:none;">+</button> Add Sub Category</h5><br>
+          </div>
+          <div class="form-group">
+            <h6>Click here to <a href="#" style="color:black;">View the guidelines</a></h6>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input required class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                I agree to the terms & conditions
+              </label>
+            </div>
+          </div>
+     <button type="submit" style="background-color:white; color:black;"class="btn btn-primary">SUBMIT</button>
+
+          </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
