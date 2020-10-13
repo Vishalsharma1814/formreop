@@ -13,15 +13,13 @@ mongoose.connect("mongodb+srv://vishal123:vishal123@cluster0.m9ogc.mongodb.net/F
 
 const postSchema = {
 
-  fname: String,
-  lname: String,
-  Email: String,
-  Mobile: String,
+  Name: String,
+  email: String,
+  mobileno: String,
+  Comapany: String,
   Address: String,
-  CompanyName: String,
-  Subcategory1: String,
-  Subcategory2: String,
-  Subcategory3: String,
+  Category: String,
+  w3review: String,
 };
 
 const Form = mongoose.model("Form", postSchema);
@@ -39,16 +37,14 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
   const form = new Form({
 
-    fname: req.body.firstname,
-    lname: req.body.lastname,
-    Email: req.body.email,
-    Mobile: req.body.mobileno,
-    Address: req.body.Caddress,
-    CompanyName: req.body.Cname,
-    Subcategory1: req.body.Sname1,
-    Subcategory2: req.body.Subcategory,
+    Name: req.body.Name,
+    email: req.body.email,
+    mobileno: req.body.mobileno,
+    Company: req.body.Company,
+    Address: req.body.Address,
+  w3review: req.body.  w3review,
+
   });
-  console.log(form);
   form.save();
   res.render("post");
 });
